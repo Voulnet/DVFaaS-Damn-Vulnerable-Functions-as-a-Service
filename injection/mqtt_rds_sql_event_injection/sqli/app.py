@@ -31,13 +31,13 @@ def index():
         return {"error": e.__str__()}
 
 @app.route('/publish/{name}', methods = ['POST'], content_types=['application/json'])
-def pub_message(name):
+def pub_message(name, TopicARN):
     try:
         jbody = app.current_request.json_body
         if 'reading' in jbody:
             str_reading = str(jbody['reading'])
             response = client.publish(
-                TopicArn='arn:aws:sns:us-east-1:358174707935:sensor_channel',
+                TopicArn=TopicARN,
                 Subject=name,
                 Message=dumps({"reading": "{}".format(str_reading)})
             )

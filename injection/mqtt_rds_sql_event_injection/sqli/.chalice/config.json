@@ -9,7 +9,7 @@
         "DB_USER": "<dbuser>",
         "DB_PASS": "<dbpass>",
         "DB_DB": "<database name>",
-        "SNS_TOPIC": "<some topic>"
+        "SNS_TOPIC": "<your topic ARN>"
       }
     }
   }
